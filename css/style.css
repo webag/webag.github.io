@@ -1291,27 +1291,6 @@ table th {
   font-size: 14px;
 }
 
-.home_plan {
-  border-bottom: 1px solid #f2ede2;
-}
-
-.home_plan ul {
-  list-style: none;
-  padding-left: 25px;
-  width: 360px;
-}
-
-.home_plan ul li {
-  position: relative;
-}
-
-.home_plan ul li:before {
-  content: '—';
-  position: absolute;
-  left: -15px;
-  top: 0px;
-}
-
 .home_korston_description {
   text-align: right;
   padding-right: 60px;
