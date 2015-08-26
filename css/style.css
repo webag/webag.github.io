@@ -212,7 +212,7 @@ img {
 }
 
 textarea {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 label {
@@ -221,6 +221,7 @@ label {
 
 input[type="text"], input[type="tel"], input[type="email"], textarea {
   border: 2px solid #35aa49;
+  font-size: 14px;
   padding: 6px 10px;
   line-height: 20px;
   transition: all 0.3s ease;
@@ -293,6 +294,15 @@ input[type="text"]:focus:-ms-input-placeholder, input[type="tel"]:focus:-ms-inpu
   -ms-transform: translate(20px, 0);
   -o-transform: translate(20px, 0);
   transform: translate(20px, 0);
+}
+
+input[type="text"].error, input[type="tel"].error, input[type="email"].error, textarea.error {
+  border-color: #e41b47;
+}
+
+textarea {
+  font: "arian", Arial, sans-serif;
+  font-family: sans-serif;
 }
 
 i {
@@ -1675,6 +1685,63 @@ table th {
 .pay-note a:hover {
   color: #00a0e3;
   text-decoration: none;
+}
+
+.modal-article {
+  width: 740px;
+}
+
+.modal-article h2 {
+  margin-bottom: 30px;
+}
+
+.modal-article textarea {
+  width: 100%;
+}
+
+.modal-article .text_description {
+  line-height: 1.1;
+  margin-left: 35px;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 23px;
+}
+
+.input-group input {
+  width: 360px;
+}
+
+.input-group label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+  width: 250px;
+  line-height: 1.1;
+  cursor: auto;
+}
+
+.modal-spasibo {
+  width: 740px;
+}
+
+.modal-spasibo .btn {
+  margin-top: 20px;
+}
+
+.errors-block {
+  display: inline-block;
+  vertical-align: top;
+  width: 450px;
+  margin-left: 15px;
+  color: #e41b47;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.errors-block p {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

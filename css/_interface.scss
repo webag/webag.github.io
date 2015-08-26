@@ -38,11 +38,12 @@
 	}
 }
 
-textarea{overflow: hidden;}
+textarea{overflow-x: hidden;}
 label{cursor: pointer;}
 
 input[type="text"],input[type="tel"],input[type="email"],textarea{
 	border: 2px solid $green;
+	font-size: 14px;
 	padding: 6px 10px;
 	line-height: 20px;
 	transition: all 0.3s ease;
@@ -61,6 +62,15 @@ input[type="text"],input[type="tel"],input[type="email"],textarea{
 			@include transform(translate(20px,0));
 		}
 	}
+
+	&.error{
+		border-color: $red;
+	}
+}
+
+textarea{
+	font: $font;
+	font-family: sans-serif;
 }
 
 i{

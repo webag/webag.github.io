@@ -239,19 +239,43 @@
 </div><!-- end site-wrapper -->
 
 <!-- Модальные окна -->
-<div id="modal-call" class="agmodal ag-fx-morph">
-	<p class="modal-title">Заказать<br>Обратный звонок</p>
-	<p>Оставьте заявку и наш администратор свяжется<br>с&nbsp;Вами в течение 10 минут</p>
+<div id="modal-article" class="agmodal ag-fx-morph modal-article">
+	<h2>Статья для конференции</h2>
 	<form class="ajax-form">
-		<input type="text" name="cname" placeholder="Введите имя">
-		<input type="text" name="ctel" placeholder="Введите телефон*" data-req="true">
-		<input type="hidden" value="call" name="ctip">
-		<button type="submit" class="btn btn-blue">Отправить</button>
+		<div class="input-group">
+			<input type="text" name="cname" placeholder="Ваше Ф.И.О.*" data-req='true'>
+			<label>Возможное пояснение</label>
+		</div>
+		<div class="input-group">
+			<input type="text" name="dolg" placeholder="Ваша должность*" data-req='true'>
+			<label>Возможное пояснение</label>
+		</div>
+		<div class="input-group">
+			<input type="text" name="science" placeholder="Научное звание*" data-req='true'>
+			<label>Возможное пояснение</label>
+		</div>
+		<div class="input-group">
+			<input type="text" name="work" placeholder="Место работы*" data-req='true'>
+			<label>Возможное пояснение к тому, как писать место работы, пример</label>
+		</div>
+		<textarea placeholder="Текст статьи*" name="text" rows="8" data-req='true'></textarea>
+		<p class="text_description">Не более 10 000 знаков с пробелами. Отделяйте заголовки и абзацы двумя переносами статьи.</p>
+		<input type="hidden" value="article" name="ctip">
+		<button type="submit" class="btn btn-green">Отправить</button>
+		<div class="errors-block">
+			<p class="error_cname">* Вы не заполнили обязательное поле «Ваше Ф.И.О.*».</p>
+			<p class="error_dolg">* Вы не заполнили обязательное поле «Ваша должность*».</p>
+			<p class="error_science">* Вы не заполнили обязательное поле «Научное звание*».</p>
+			<p class="error_work">* Вы не заполнили обязательное поле «Место работы*».</p>
+			<p class="error_text">* Вы не заполнили обязательное поле «Текст статьи*».</p>
+		</div>
 	</form>
 </div>
 
-<div id="modal-spasibo" class="agmodal ag-fx-morph_top">
-	<p class="thanks-title">Спасибо за заявку!</p>
+<div id="modal-spasibo" class="agmodal ag-fx-morph_top modal-spasibo">
+	<h2>Ваша статья отправлена</h2>
+	<p class="user-content">Спасибо! Мы получили вашу статью и свяжемся с вами в ближайшее время.<br>По всем вопросам пишите на почту <a href=#>rettsyndrome@mail.ru</a>.</p>
+	<a class="btn btn-green close-modal">Вернуться на сайт</a>
 </div>
 <!-- Модальные окна -->
 
@@ -261,4 +285,5 @@
 
 	</body>
 </html>
+
 

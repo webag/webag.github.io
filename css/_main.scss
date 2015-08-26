@@ -719,3 +719,62 @@
 	}
 }
 // registration
+
+// form
+.modal-article{
+	width: 740px;
+
+	h2{
+		margin-bottom: 30px;
+	}
+
+	textarea{
+		width: 100%;
+	}
+
+	.text_description{
+		line-height: 1.1;
+		margin-left: 35px;
+		margin-bottom: 25px;
+	}
+}
+
+.input-group{
+	margin-bottom: 23px;
+
+	input{
+		width: 360px;
+	}
+
+	label{
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 15px;
+		width: 250px;
+		line-height: 1.1;
+		cursor: auto;
+	}
+}
+
+.modal-spasibo{
+	width: 740px;
+
+	.btn{
+		margin-top: 20px;
+	}
+}
+
+.errors-block{
+	display: inline-block;
+	vertical-align: top;
+	width: 450px;
+	margin-left: 15px;
+	color: #e41b47;
+	font-style: italic;
+	font-size: 14px;
+
+	p{
+		display: none;
+	}
+}
+// form

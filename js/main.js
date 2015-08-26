@@ -4,9 +4,14 @@ $(document).ready(function(){
 		var send=true;
 		event.preventDefault();
 
+		$('.errors-block p').hide();
+
 		$(this).find("[data-req='true']").each(function(){
 			if ($(this).val() === "") {
 				$(this).addClass('error');
+				var input_name = $(this).attr('name');
+				var error_block = $('.error_'+input_name);
+				error_block.show();
 				send = false;
 			}
 		});
@@ -23,16 +28,11 @@ $(document).ready(function(){
 				async: true,
 				url: "/send.php",
 				data: $(this).serializeArray(),
-				beforeSend: function(){
-					btn.addClass("loading");
-				}
 			}).success(function() {
-				btn.removeClass("loading");
 				form.parents('.agmodal').trigger('ag:close');
 				$('#modal-spasibo').trigger('ag:open');
 				// setTimeout(function() {$('#modal-spasibo').trigger('ag:close');},4500);
-				form.find("input[name!='ctip']").val('');
-				btn.addClass('btn_good');
+				form.find("input[name!='ctip'],textarea").val('');
 				btn.text('Отправлено')
 			});
 		}
@@ -58,5 +58,9 @@ $(document).ready(function(){
 		video: true,
 		lazyLoad:true,
 		mouseDrag: false
+	});
+
+	$('.close-modal').on("click", function() {
+		$(this).parents('.agmodal').trigger('ag:close');
 	});
 });
