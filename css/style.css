@@ -541,6 +541,10 @@ h4 {
   margin-bottom: 10px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .user-content ul, .user-content p, .user-content ol {
   margin-bottom: 15px;
 }
