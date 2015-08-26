@@ -1,0 +1,66 @@
+/*
+@extend %red-link;
+*/
+%red-link{
+	color: $red;
+	text-decoration: none;
+	border-bottom: 1px solid #ffbcc5;
+	transition: all 0.3s ease;
+
+	&:hover{
+		color: $blue;
+		text-decoration: none;
+		border-color: #aad6f2;
+	}
+}
+
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-ms-transform: $transform;
+	-o-transform: $transform;
+	transform: $transform;
+}
+
+/// @param {String} $orientation - Type of gradient, either `vertical`, `horizontal` or `radial`
+/// @example scss - Usage
+///   .foo {
+///     @include background-gradient(red, black, 'vertical');
+///   }
+@mixin background-gradient($start-color, $end-color, $orientation) {
+	background: $start-color;
+
+	@if $orientation == 'vertical' {
+		background: -webkit-linear-gradient(top, $start-color, $end-color);
+		background: linear-gradient(to bottom, $start-color, $end-color);
+	} @else if $orientation == 'horizontal' {
+		background: -webkit-linear-gradient(left, $start-color, $end-color);
+		background: linear-gradient(to right, $start-color, $end-color);
+	} @else {
+		background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+		background: radial-gradient(ellipse at center, $start-color, $end-color);
+	}
+}
+
+/// @param {String} $name - Animation name
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+			@content;
+	}
+	@-moz-keyframes #{$name} {
+			@content;
+	}
+	@keyframes #{$name} {
+			@content;
+	}
+}
+
+@mixin placeholder {
+	$placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+	@each $placeholder in $placeholders {
+		&:#{$placeholder}-placeholder {
+			@content;
+		}
+	}
+}
