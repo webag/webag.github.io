@@ -71,6 +71,11 @@
 		display: inline-block;
 		position: relative;
 		margin: 0 3px;
+		transition: all 0.3s ease;
+
+		&:hover{
+			color: $blue;
+		}
 
 		&.current{
 			font-weight: normal;
@@ -161,7 +166,7 @@
 
 .speaker{
 	padding: 10px;
-	background-color: #FFF;
+	background-color: transparent;
 	transition: all 0.3s ease;
 	margin-bottom: 10px;
 
@@ -384,17 +389,29 @@
 	a{
 		display: inline-block;
 		vertical-align: middle;
+		position: relative;
 		margin-right: 8px;
 		border: none;
+		width: 36px;
+		height: 36px;
+		background-color: $green;
+		transition: all 0.3s ease;
+
+		&:hover{
+			background-color: darken($green, 5%);
+		}
+
+		&:active{
+			background-color: darken($green, 15%);
+		}
 
 		img{
-			display: block;
-			transition: all 0.3s ease;
-			opacity: 1;
-
-			&:hover{
-				opacity: 0.8;
-			}
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
 		}
 	}
 }
@@ -409,6 +426,10 @@
 	&_text{
 		padding-left: 110px;
 		padding-top: 10px;
+
+		h4{
+			margin-bottom: 0;
+		}
 
 		p{
 			margin-bottom: 0;
@@ -467,9 +488,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	position: absolute;
-	top: 0;
-	bottom: 0;
-	margin: auto;
+	top: 130px;
 
 	&:hover{
 		background-color: transparentize($blue, 0.2);
@@ -518,11 +537,16 @@
 
 	.btn{
 		margin-left: 10px;
+		vertical-align: top;
 	}
 }
 
 .spec-section{
 	border-bottom: 1px solid #f2ede2;
+
+	.btn{
+		margin-top: 10px;
+	}
 }
 // program
 
@@ -569,4 +593,110 @@
 .visa_left{
 	padding-right: 25px;
 }
+
+.visa_right_block{
+	margin-bottom: 70px;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
 // booking
+
+
+// registration
+.reg-top-section{
+	border-bottom: 1px solid #f2ede2;
+}
+
+.note{
+
+	&_day{
+		font-weight: bold;
+		font-size: 48px;
+		display: block;
+		line-height: 0.8;
+	}
+
+	&_text{
+		font-size: 14px;
+		margin-top: 10px;
+		display: block;
+	}
+}
+
+.packages-table{
+	th:first-child{
+		width: 450px;
+	}
+}
+
+.pay-section{
+	border-bottom: 1px solid #f2ede2;
+}
+
+.currency{
+	font-size: 14px;
+
+	&_link{
+		font-weight: bold;
+		color: $red;
+		position: relative;
+		margin-left: 15px;
+		cursor: pointer;
+
+		&:after{
+			content: '';
+			width: 10px;
+			height: 6px;
+			position: absolute;
+			right: -15px;
+			top: 6px;
+			background-image: url(../images/icons/drop.png);
+		}
+	}
+}
+
+.pay-table{
+	margin-top: 20px;
+
+	th:first-child{
+		width: 450px;
+	}
+
+	.btn{
+		margin-left: -20px;
+	}
+
+	td{
+		color: #9c9c9c;
+	}
+}
+
+.red-row td{
+	background-color: #f6eeee;
+}
+
+.green-row td{
+	background-color: #d3f6c8;
+	color: $black;
+}
+
+.pay-note{
+	font-size: 14px;
+	margin-left: 35px;
+	margin-bottom: 25px;
+
+	a{
+		font-weight: bold;
+		color: $red;
+		text-decoration: none;
+		transition: all 0.3s ease;
+
+		&:hover{
+			color: $blue;
+			text-decoration: none;
+		}
+	}
+}
+// registration

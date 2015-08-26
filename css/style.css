@@ -340,7 +340,20 @@ i {
   width: 19px;
   height: 23px;
   background: url(../images/icons/flight.png) no-repeat;
-  margin: -2px 5px 0 -5px;
+  margin: -2px 10px 0 -5px;
+}
+
+.icon-check {
+  width: 20px;
+  height: 13px;
+  background: url(../images/icons/check.png) no-repeat;
+}
+
+.icon-money {
+  width: 21px;
+  height: 16px;
+  background: url(../images/icons/money.png) no-repeat;
+  margin: -1px 5px 0 0;
 }
 
 .agmodal {
@@ -813,6 +826,189 @@ table th {
   z-index: 1;
 }
 
+/* --- EASYDROPDOWN DEFAULT THEME --- */
+/* PREFIXED CSS */
+.dropdown,
+.dropdown div,
+.dropdown div::after {
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.dropdown .selected::after,
+.dropdown.scrollable div::after {
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+}
+
+/* WRAPPER */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+  width: 130px;
+  border: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.dropdown.open {
+  z-index: 2;
+}
+
+.dropdown.focus {
+  outline: none;
+}
+
+/* CARAT */
+.dropdown .carat {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  margin-top: -4px;
+  width: 10px;
+  height: 6px;
+  background: url(../images/icons/drop.png) no-repeat;
+  transition: all 0.3s ease;
+}
+
+.dropdown.open .carat {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* OLD SELECT (HIDDEN) */
+.dropdown .old {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.dropdown select {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.dropdown.touch .old {
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown.touch select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* SELECTED FEEDBACK ITEM */
+.dropdown .selected,
+.dropdown li {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  color: #e41b47;
+  padding: 9px 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dropdown.disabled .selected {
+  color: #999;
+}
+
+/* DROP DOWN WRAPPER */
+.dropdown div {
+  position: absolute;
+  height: 0;
+  top: 100%;
+  background: #fff;
+  border: 2px solid #00a0e3;
+  opacity: 0;
+}
+
+.dropdown div:before {
+  content: '';
+  width: 11px;
+  height: 11px;
+  background-color: #FFF;
+  border-color: #00a0e3;
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  top: -7px;
+  right: 16px;
+}
+
+/* Height is adjusted by JS on open */
+.dropdown.open div {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* FADE OVERLAY FOR SCROLLING LISTS */
+.dropdown.scrollable div::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  box-shadow: inset 0 -50px 30px -35px #fff;
+}
+
+.dropdown.scrollable.bottom div::after {
+  opacity: 0;
+}
+
+/* DROP DOWN LIST */
+.dropdown ul {
+  list-style: none;
+  overflow: hidden;
+  height: 100%;
+}
+
+.dropdown.scrollable.open ul {
+  overflow-y: auto;
+}
+
+/* DROP DOWN LIST ITEMS */
+.dropdown li {
+  list-style: none;
+  padding: 10px 25px;
+}
+
+/* .focus class is also added on hover */
+.dropdown li.focus {
+  background: #00a0e3;
+  position: relative;
+  z-index: 3;
+  color: #fff;
+}
+
+.dropdown li.active {
+  font-weight: 700;
+}
+
 .site-wrapper {
   margin: 0 auto;
   width: 1030px;
@@ -886,6 +1082,11 @@ table th {
   display: inline-block;
   position: relative;
   margin: 0 3px;
+  transition: all 0.3s ease;
+}
+
+.language-changer a:hover {
+  color: #00a0e3;
 }
 
 .language-changer a.current {
@@ -969,7 +1170,7 @@ table th {
 
 .speaker {
   padding: 10px;
-  background-color: #FFF;
+  background-color: transparent;
   transition: all 0.3s ease;
   margin-bottom: 10px;
 }
@@ -1188,18 +1389,30 @@ table th {
 .social a {
   display: inline-block;
   vertical-align: middle;
+  position: relative;
   margin-right: 8px;
   border: none;
+  width: 36px;
+  height: 36px;
+  background-color: #35aa49;
+  transition: all 0.3s ease;
+}
+
+.social a:hover {
+  background-color: #2f9741;
+}
+
+.social a:active {
+  background-color: #237030;
 }
 
 .social a img {
-  display: block;
-  transition: all 0.3s ease;
-  opacity: 1;
-}
-
-.social a img:hover {
-  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 
 .director {
@@ -1213,6 +1426,10 @@ table th {
 .director_text {
   padding-left: 110px;
   padding-top: 10px;
+}
+
+.director_text h4 {
+  margin-bottom: 0;
 }
 
 .director_text p {
@@ -1266,9 +1483,7 @@ table th {
   background-position: center center;
   background-repeat: no-repeat;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  top: 130px;
 }
 
 .owl-nav div:hover {
@@ -1312,10 +1527,15 @@ table th {
 
 .subscribe-form .btn {
   margin-left: 10px;
+  vertical-align: top;
 }
 
 .spec-section {
   border-bottom: 1px solid #f2ede2;
+}
+
+.spec-section .btn {
+  margin-top: 10px;
 }
 
 .booking {
@@ -1358,6 +1578,104 @@ table th {
 
 .visa_left {
   padding-right: 25px;
+}
+
+.visa_right_block {
+  margin-bottom: 70px;
+}
+
+.visa_right_block:last-child {
+  margin-bottom: 0;
+}
+
+.reg-top-section {
+  border-bottom: 1px solid #f2ede2;
+}
+
+.note_day {
+  font-weight: bold;
+  font-size: 48px;
+  display: block;
+  line-height: 0.8;
+}
+
+.note_text {
+  font-size: 14px;
+  margin-top: 10px;
+  display: block;
+}
+
+.packages-table th:first-child {
+  width: 450px;
+}
+
+.pay-section {
+  border-bottom: 1px solid #f2ede2;
+}
+
+.currency {
+  font-size: 14px;
+}
+
+.currency_link {
+  font-weight: bold;
+  color: #e41b47;
+  position: relative;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.currency_link:after {
+  content: '';
+  width: 10px;
+  height: 6px;
+  position: absolute;
+  right: -15px;
+  top: 6px;
+  background-image: url(../images/icons/drop.png);
+}
+
+.pay-table {
+  margin-top: 20px;
+}
+
+.pay-table th:first-child {
+  width: 450px;
+}
+
+.pay-table .btn {
+  margin-left: -20px;
+}
+
+.pay-table td {
+  color: #9c9c9c;
+}
+
+.red-row td {
+  background-color: #f6eeee;
+}
+
+.green-row td {
+  background-color: #d3f6c8;
+  color: #222222;
+}
+
+.pay-note {
+  font-size: 14px;
+  margin-left: 35px;
+  margin-bottom: 25px;
+}
+
+.pay-note a {
+  font-weight: bold;
+  color: #e41b47;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pay-note a:hover {
+  color: #00a0e3;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

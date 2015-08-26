@@ -49,7 +49,7 @@ $(document).ready(function(){
 		video: true,
 		lazyLoad:true
 	});
-	$('.slider_with-map').owlCarousel({
+	$('.slider_with-media').owlCarousel({
 		nav: true,
 		navText: ['',''],
 		items: 1,
