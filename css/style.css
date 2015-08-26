@@ -1159,8 +1159,24 @@ table th {
   margin-right: 70px;
 }
 
-.poster_languages strong {
+.poster_meta a {
   color: #e41b47;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.poster_meta a:hover {
+  color: #00a0e3;
+}
+
+.poster_languages a {
+  color: #e41b47;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.poster_languages a:hover {
+  color: #00a0e3;
 }
 
 .speakers {

@@ -143,15 +143,34 @@
 	}
 }
 
-.poster_meta span{
-	display: inline-block;
-	font-size: 14px;
-	margin-right: 70px;
+.poster_meta{
+
+	span{
+		display: inline-block;
+		font-size: 14px;
+		margin-right: 70px;
+	}
+
+	a{
+		color: $red;
+		font-weight: bold;
+		transition: all 0.3s ease;
+
+		&:hover{
+			color: $blue;
+		}
+	}
 }
 
 .poster_languages{
-	strong{
+	a{
 		color: $red;
+		font-weight: bold;
+		transition: all 0.3s ease;
+
+		&:hover{
+			color: $blue;
+		}
 	}
 }
 
